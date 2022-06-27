@@ -1,0 +1,18 @@
+FILE: /var/www/html/magento244/app/code/Unit3/ProductViewDescriptionPlugin/Block/Product/View/Description.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 9 WARNINGS AFFECTING 6 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+  8 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  8 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+  9 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  9 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 10 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 12 | WARNING | [x] Expected 1 newline at end of file; 0 found
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 9 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

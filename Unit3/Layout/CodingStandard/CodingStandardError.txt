@@ -1,0 +1,73 @@
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/Controller/Layout/onepage.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 28 WARNINGS AFFECTING 16 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+  7 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  8 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  8 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+  8 | WARNING | [ ] Missing PHP DocBlock for class property.
+  9 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 2
+ 12 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 12 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 2
+ 13 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 13 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 14 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 14 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 15 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 15 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 16 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 16 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 18 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 18 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 19 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 19 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 20 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 20 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 21 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 21 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 22 | WARNING | [x] Expected 1 newline at end of file; 0 found
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 27 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/view/frontend/templates/template.phtml
+---------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 9 WARNINGS AFFECTING 3 LINES
+---------------------------------------------------------------------------------------------
+ 1 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 1 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 1 | WARNING | [ ] Unescaped output detected.
+ 2 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 2 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 2 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 2 | WARNING | [ ] Unescaped output detected.
+ 3 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 3 | WARNING | [ ] Unescaped output detected.
+---------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+---------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/Layout/view/frontend/templates/onepage.phtml
+---------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 8 WARNINGS AFFECTING 3 LINES
+---------------------------------------------------------------------------------------------
+ 1 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 1 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 1 | WARNING | [ ] Unescaped output detected.
+ 2 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 2 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 3 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 3 | WARNING | [ ] Short echo tag syntax must be used; expected "<?=" but found "<?php echo"
+ 3 | WARNING | [ ] Unescaped output detected.
+---------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+---------------------------------------------------------------------------------------------
+

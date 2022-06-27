@@ -1,0 +1,76 @@
+
+FILE: /var/www/html/magento244/app/code/Unit4/VendorEntity/Setup/Patch/Schema/AddData.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 22 WARNINGS AFFECTING 12 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+ 13 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 13 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 18 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 18 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 19 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 19 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 20 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 20 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 6
+ 21 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 21 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 22 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 22 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 23 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 23 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 24 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 24 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 6
+ 25 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 25 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 30 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 30 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 35 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 35 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 22 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit4/VendorEntity/Setup/Patch/Schema/AddColumn.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 31 WARNINGS AFFECTING 16 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 11 | WARNING | [ ] Missing PHP DocBlock for class property.
+ 15 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 15 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 20 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 20 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 21 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 21 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 22 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 22 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 6
+ 23 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 23 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 24 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 24 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 25 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 25 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 26 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 26 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 27 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 27 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 7
+ 28 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 28 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 6
+ 29 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 29 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 30 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 30 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 35 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 35 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+ 40 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 40 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 5
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 30 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

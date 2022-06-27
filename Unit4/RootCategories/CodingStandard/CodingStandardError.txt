@@ -1,0 +1,99 @@
+
+FILE: /var/www/html/magento244/app/code/Unit4/RootCategories/Controller/Index/Index.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 7 WARNINGS AFFECTING 5 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+  5 | WARNING | [x] There must be one blank line after the last USE statement; 0 found;
+  9 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  9 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 10 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 7 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit4/RootCategories/ViewModel/StoresList.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 56 WARNINGS AFFECTING 30 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+  3 | WARNING | [x] There must be one blank line after the namespace declaration
+ 10 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 10 | WARNING | [ ] Missing PHP DocBlock for class property.
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 12 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 12 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 13 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 13 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 14 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 14 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 16 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 16 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 17 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 17 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 18 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 18 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 19 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 19 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 20 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 20 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 21 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 21 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 22 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 22 | WARNING | [x] Line indented incorrectly; expected 8 spaces, found 2
+ 23 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 23 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 24 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 24 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 25 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 25 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 4
+ 26 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 26 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 4
+ 27 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 27 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 28 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 28 | WARNING | [x] Line indented incorrectly; expected 8 spaces, found 2
+ 29 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 29 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 30 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 31 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 31 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 32 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 32 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 33 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 33 | WARNING | [x] Line indented incorrectly; expected at least 12 spaces, found 3
+ 34 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 34 | WARNING | [x] Line indented incorrectly; expected 8 spaces, found 2
+ 35 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 35 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 36 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 36 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 37 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 37 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 38 | WARNING | [x] Expected 1 newline at end of file; 0 found
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 55 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit4/RootCategories/view/frontend/templates/categories.phtml
+-----------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 5 WARNINGS AFFECTING 3 LINES
+-----------------------------------------------------------------------------------------------------
+ 1 | WARNING | [x] Whitespace found at end of line
+ 2 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 2 | WARNING | [x] The use of $this in templates is deprecated. Use $block instead.
+ 3 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 3 | WARNING | [x] Expected 1 newline at end of file; 0 found
+-----------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 5 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-----------------------------------------------------------------------------------------------------
+
