@@ -1,0 +1,63 @@
+FILE: /var/www/html/magento244/app/code/Unit3/TemplateBlock/Controller/Action/Index.php
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AND 34 WARNINGS AFFECTING 18 LINES
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1 | ERROR   | [ ] An error occurred during processing; checking has been aborted. The error message was: Undefined array key "comment_closer" in
+    |         |     /var/www/html/magento-coding-standard/Magento2/Helpers/Commenting/PHPDocFormattingValidator.php on line 142
+  7 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  7 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+  7 | WARNING | [ ] Missing PHP DocBlock for class property.
+  8 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  8 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+  9 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+  9 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 2
+ 10 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 10 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 2
+ 11 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 11 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 12 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 12 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 13 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 13 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 14 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 14 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 15 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 15 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 16 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 16 | WARNING | [x] Line indented incorrectly; expected at least 4 spaces, found 1
+ 17 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 17 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 18 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 18 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 19 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 19 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 20 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 20 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 21 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 21 | WARNING | [x] Line indented incorrectly; expected at least 8 spaces, found 2
+ 22 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 22 | WARNING | [x] Line indented incorrectly; expected 4 spaces, found 1
+ 23 | WARNING | [x] Expected 1 newline at end of file; 0 found
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 33 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/TemplateBlock/view/frontend/templates/template.phtml
+--------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------
+ 1 | WARNING | Unescaped output detected.
+--------------------------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/magento244/app/code/Unit3/TemplateBlock/Block/Template.php
+------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 2 WARNINGS AFFECTING 2 LINES
+------------------------------------------------------------------------------
+ 6 | WARNING | [x] Spaces must be used to indent lines; tabs are not allowed
+ 7 | WARNING | [x] Expected 1 newline at end of file; 0 found
+------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+------------------------------------------------------------------------------
+
