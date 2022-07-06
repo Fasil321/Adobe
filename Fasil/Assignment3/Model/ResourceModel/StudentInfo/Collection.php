@@ -15,6 +15,6 @@ class Collection extends AbstractCollection
      */
     protected function _construct(): void
     {
-		$this->_init(Model::class,ResourceModel::class);
-	}
+        $this->_init(Model::class, ResourceModel::class);
+    }
 }

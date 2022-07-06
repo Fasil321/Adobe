@@ -1,6 +1,6 @@
 <?php
-
 namespace Fasil\Assignment3\Model\ResourceModel;
+
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class StudentInfo extends AbstractDb
@@ -12,6 +12,6 @@ class StudentInfo extends AbstractDb
      */
     protected function _construct(): void
     {
-    	$this->_init('student_info','entity_id');
+        $this->_init('student_info', 'entity_id');
     }
 }

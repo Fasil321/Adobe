@@ -7,7 +7,7 @@ interface StudentInfoRepositoryInterface
     /**
      * Return collection by id
      *
-     * @param $id
+     * @param int $id
      * @return mixed
      */
     public function getById($id);
