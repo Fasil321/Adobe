@@ -13,6 +13,6 @@ class StudentInfo extends AbstractModel
      */
     protected function _construct(): void
     {
-		$this->_init(ResourceModel::class);
-	}
+        $this->_init(ResourceModel::class);
+    }
 }
