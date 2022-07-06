@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+        <table name="student_info" resource="default" engine="innodb" comment="student info">
+                <column xsi:type="smallint" name="entity_id" unsigned="true" identity="true" nullable="false" comment="Entity Id" />
+                <column xsi:type="int" name="registration_no" unsigned="true" nullable="false" comment="Registration id" />
+                <column xsi:type="varchar" name="name" length="100" nullable="false" comment="Student name" />
+                <column xsi:type="varchar" name="email" length="255" nullable="true" comment="Email id" />
+                <column xsi:type="date" name="dob" comment="Date of Birth" />
+                <column xsi:type="text" name="address" nullable="false" comment="Student address" />
+                <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true" comment="timestamp" />
+                <column xsi:type="boolean" name="enabled" nullable="false" comment="enabled" />
+                <constraint xsi:type="primary" referenceId="PRIMARY">
+                        <column name="entity_id" />
+                </constraint>
+                <index referenceId="STUDENT_INFO_ENTITY_ID" indexType="btree">
+                        <column name="entity_id" />
+                </index>
+        </table>
+</schema>
