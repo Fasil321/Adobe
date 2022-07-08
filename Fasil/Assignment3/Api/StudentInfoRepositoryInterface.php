@@ -11,4 +11,6 @@ interface StudentInfoRepositoryInterface
      * @return mixed
      */
     public function getById($id);
+
+    public function getDetails($limit);
 }
