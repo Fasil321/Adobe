@@ -30,4 +30,15 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         $student = $this->studentInfoFactory->create();
         return $student->load($id, 'entity_id');
     }
+
+    public function getDetails($limit)
+    {
+    	$collection = [];
+        for($i=1;$i<=$limit;$i++){
+        	$student = $this->studentInfoFactory->create();
+        	$data = $student->load($i);
+	        $collection[] = $data->getData();
+        }
+        return $collection;
+    }
 }

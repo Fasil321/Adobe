@@ -44,9 +44,9 @@ class Index extends Action
     public function execute()
     {
         $result = $this->jsonFactory->create();
-        $id = $this->getRequest()->getParam('id');
-        $collection = $this->studentInfoRepository->getById($id);
-        if (($collection->getData())) {
+        $limit = $this->getRequest()->getParam('id');
+        $collection = $this->studentInfoRepository->getDetails($limit);
+        if ($collection) {
             return $result->setData($collection);
         }
         return  $result->setData('No result fount');
