@@ -1,0 +1,31 @@
+{
+    "student_info": {
+        "column": {
+            "entity_id": true,
+            "registration_no": true,
+            "name": true,
+            "email": true,
+            "dob": true,
+            "address": true,
+            "created_at": true,
+            "enabled": true
+        },
+        "index": {
+            "STUDENT_INFO_ENTITY_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "student_grade": {
+        "column": {
+            "id": true,
+            "student_id": true,
+            "grade": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "STUDENT_GRADE_STUDENT_ID_STUDENT_INFO_ENTITY_ID": true
+        }
+    }
+}

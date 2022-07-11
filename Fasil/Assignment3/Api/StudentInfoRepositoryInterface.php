@@ -13,4 +13,6 @@ interface StudentInfoRepositoryInterface
     public function getById($id);
 
     public function getDetails($limit);
+
+    public function getStudentWithGrade($id);
 }
