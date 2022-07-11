@@ -17,4 +17,13 @@
                         <column name="entity_id" />
                 </index>
         </table>
+        <table name="student_grade" resource="default" engine="innodb" comment="student grade">
+                <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="id" />
+                <column xsi:type="smallint" name="student_id" unsigned="true" nullable="false" comment="Student Id" />
+                <column xsi:type="varchar" name="grade" nullable="false" comment="grade" />
+                <constraint xsi:type="primary" referenceId="PRIMARY">
+                        <column name="id" />
+                </constraint>
+                <constraint xsi:type="foreign" referenceId="STUDENT_GRADE_ID_STUDENT_INFO_ENTITY_ID" table="student_grade" column="student_id" referenceTable="student_info" referenceColumn="entity_id" onDelete="CASCADE"/>
+        </table>
 </schema>
