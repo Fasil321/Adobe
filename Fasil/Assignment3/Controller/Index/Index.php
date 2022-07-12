@@ -43,10 +43,18 @@ class Index extends Action
      */
     public function execute()
     {
+        // $result = $this->jsonFactory->create();
+        // $limit = $this->getRequest()->getParam('id');
+        // $collection = $this->studentInfoRepository->getDetails($limit);
+        // if ($collection) {
+        //     return $result->setData($collection);
+        // }
+        // return  $result->setData('No result fount');
+
         $result = $this->jsonFactory->create();
-        $limit = $this->getRequest()->getParam('id');
-        $collection = $this->studentInfoRepository->getDetails($limit);
-        if ($collection) {
+        $id = $this->getRequest()->getParam('id');
+        $collection = $this->studentInfoRepository->getById($id);
+        if (($collection)) {
             return $result->setData($collection);
         }
         return  $result->setData('No result fount');

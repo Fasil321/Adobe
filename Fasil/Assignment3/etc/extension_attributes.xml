@@ -1,0 +1,7 @@
+<extension_attributes for="Fasil\Assignment3\Api\Data\StudentInfoInterface">
+    <attribute code="join_student_info_grade_info" type="Fasil\Assignment3\Api\Data\GradeInfoInterface">
+        <join reference_table="student_grade" reference_field="id" join_on_field="entity_id">
+            <field>grade</field>
+        </join>
+    </attribute>
+</extension_attributes>

@@ -1,9 +1,11 @@
 <?php
 namespace Fasil\Assignment3\Model;
 
+use Fasil\Assignment3\Api\Data\StudentInfoInterface;
 use Fasil\Assignment3\Api\StudentInfoRepositoryInterface;
 use Fasil\Assignment3\Model\StudentInfoFactory;
 use Magento\Framework\App\ResourceConnection;
+use Fasil\Assignment3\Api\Data\StudentInfoInterfaceFactory;
 
 class StudentInfoRepository implements StudentInfoRepositoryInterface
 {
@@ -15,24 +17,36 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
     /**
      * @param \Fasil\Assignment3\Model\StudentInfoFactory $studentInfoFactory
      */
-    public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection)
+    public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection, StudentInfoInterfaceFactory $studentInfo)
     {
         $this->studentInfoFactory = $studentInfoFactory;
         $this->resourceConnection = $resourceConnection;
+        $this->studentInfo = $studentInfo;
     }
 
     /**
      * Return collection by id
      *
      * @param int $id
-     * @return StudentInfo
+     * @return StudentInfoInterface
      */
     public function getById($id)
     {
-        $student = $this->studentInfoFactory->create();
-        return $student->load($id, 'entity_id');
+        // $student = $this->studentInfoFactory->create();
+        // return $student->load($id, 'entity_id')->getEmail();
+
+
+        $studentModel = $this->studentInfoFactory->create()->load($id);
+        $studentData = $this->studentInfo->create();
+        $studentData = $studentData->setId($studentModel->getId());
+        $studentData = $studentData->setName($studentModel->getName());
+        return $studentData;
     }
 
+    /**
+     * @param int $limit
+     * @return array
+     */
     public function getDetails($limit)
     {
     	$collection = [];
@@ -44,6 +58,10 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         return $collection;
     }
 
+    /**
+     * @param int $id
+     * @return array
+     */
     public function getStudentWithGrade($id)
     {
         $connection = $this->resourceConnection->getConnection();
