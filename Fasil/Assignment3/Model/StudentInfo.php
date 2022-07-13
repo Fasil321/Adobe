@@ -5,6 +5,7 @@ use Magento\Framework\Model\AbstractExtensibleModel;
 use Magento\Framework\Model\AbstractModel;
 use Fasil\Assignment3\Api\Data\StudentInfoInterface;
 use Fasil\Assignment3\Model\ResourceModel\StudentInfo as ResourceModel;
+use Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface;
 
 class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterface
 {
@@ -98,8 +99,6 @@ class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterfac
 
     /**
      * @inheritdoc
-     *
-     * @return \Fasil\Assignment3\Api\Data\GradeInfoInterface|null
      */
     public function getExtensionAttributes()
     {
@@ -108,11 +107,8 @@ class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterfac
 
     /**
      * @inheritdoc
-     *
-     * @param \Fasil\Assignment3\Api\Data\GradeInfoInterface $extensionAttributes
-     * @return $this
      */
-    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\GradeInfoInterface $extensionAttributes)
+    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface $extensionAttributes)
     {
         return $this->_setExtensionAttributes($extensionAttributes);
     }

@@ -12,6 +12,5 @@ class GradeInfo extends AbstractDb
     protected function _construct()
     {
         $this->_init('student_grade', 'id');
-        $this->_useIsObjectNew = true;
     }
 }

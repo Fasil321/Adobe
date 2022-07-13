@@ -8,6 +8,8 @@ use Magento\Framework\Model\AbstractModel;
 
 class GradeInfo extends AbstractModel implements GradeInfoInterface
 {
+    const ID ='id';
+
     const STUDENT_ID = 'student_id';
 
     const GRADE = 'grade';
@@ -20,6 +22,16 @@ class GradeInfo extends AbstractModel implements GradeInfoInterface
     protected function _construct()
     {
         $this->_init(ResourceModel::class);
+    }
+
+    public function getId()
+    {
+        return $this->getData(self::ID);
+    }
+
+    public function setId($id)
+    {
+        return $this->setData(self::ID,$id);
     }
 
     /**
