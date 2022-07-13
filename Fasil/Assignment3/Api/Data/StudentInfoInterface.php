@@ -2,7 +2,9 @@
 
 namespace Fasil\Assignment3\Api\Data;
 
-interface StudentInfoInterface
+use Magento\Framework\Api\ExtensibleDataInterface;
+
+interface StudentInfoInterface extends ExtensibleDataInterface
 {
     /**
      * @return int
@@ -84,15 +86,15 @@ interface StudentInfoInterface
     /**
      * Retrieve existing extension attributes object or create a new one.
      *
-     * @return \Fasil\Assignment3\Api\Data\GradeInfoInterface|null
+     * @return \Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface|null
      */
     public function getExtensionAttributes();
 
     /**
      * Set an extension attributes object.
      *
-     * @param \Fasil\Assignment3\Api\Data\GradeInfoInterface $extensionAttributes
+     * @param \Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface|null $extensionAttributes
      * @return $this
      */
-    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\GradeInfoInterface $extensionAttributes);
+    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface $extensionAttributes);
 }

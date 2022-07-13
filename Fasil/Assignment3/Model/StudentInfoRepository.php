@@ -4,8 +4,13 @@ namespace Fasil\Assignment3\Model;
 use Fasil\Assignment3\Api\Data\StudentInfoInterface;
 use Fasil\Assignment3\Api\StudentInfoRepositoryInterface;
 use Fasil\Assignment3\Model\StudentInfoFactory;
+use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\App\ResourceConnection;
 use Fasil\Assignment3\Api\Data\StudentInfoInterfaceFactory;
+use Fasil\Assignment3\Model\ResourceModel\StudentInfo\CollectionFactory;
+use Magento\Framework\Api\ExtensionAttribute\JoinProcessorInterface;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
+
 
 class StudentInfoRepository implements StudentInfoRepositoryInterface
 {
@@ -17,11 +22,16 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
     /**
      * @param \Fasil\Assignment3\Model\StudentInfoFactory $studentInfoFactory
      */
-    public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection, StudentInfoInterfaceFactory $studentInfo)
+    public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection,
+        StudentInfoInterfaceFactory $studentInfo,CollectionFactory $studentCollectionFactory,
+        JoinProcessorInterface $extensionAttributesJoinProcessor, CollectionProcessorInterface $collectionProcessor)
     {
         $this->studentInfoFactory = $studentInfoFactory;
         $this->resourceConnection = $resourceConnection;
         $this->studentInfo = $studentInfo;
+        $this->studentCollectionFactory = $studentCollectionFactory;
+        $this->extensionAttributesJoinProcessor = $extensionAttributesJoinProcessor;
+        $this->collectionProcessor = $collectionProcessor;
     }
 
     /**
@@ -38,9 +48,15 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
 
         $studentModel = $this->studentInfoFactory->create()->load($id);
         $studentData = $this->studentInfo->create();
-        $studentData = $studentData->setId($studentModel->getId());
-        $studentData = $studentData->setName($studentModel->getName());
+        $studentData->setId($studentModel->getId());
+        $studentData->setName($studentModel->getName());
+        $studentData->setEmail($studentModel->getEmail());
+        $studentData->setRegistrationNo($studentModel->getRegistrationNo());
+        $studentData->setDob($studentModel->getDob());
+        $studentData->setAddress($studentModel->getAddress());
+        $studentData->setEnabled($studentModel->getEnabled());
         return $studentData;
+
     }
 
     /**
@@ -70,4 +86,5 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         $join = $connection->select()->from(['mainTable'=>$mainTable])->join(['gradeTable'=>$gradeTable],'mainTable.entity_id=gradeTable.student_id')->where('mainTable.entity_id=?',$id);
         return $connection->fetchAll($join);
     }
+
 }

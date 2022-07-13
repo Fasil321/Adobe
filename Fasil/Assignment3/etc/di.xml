@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Fasil\Assignment3\Api\StudentInfoRepositoryInterface" type="Fasil\Assignment3\Model\StudentInfoRepository" />
+    <preference for="Fasil\Assignment3\Api\GradeInfoRepositoryInterface" type="Fasil\Assignment3\Model\GradeInfoRepository" />
     <preference for="Fasil\Assignment3\Api\Data\StudentInfoInterface" type="Fasil\Assignment3\Model\StudentInfo" />
     <preference for="Fasil\Assignment3\Api\Data\GradeInfoInterface" type="Fasil\Assignment3\Model\GradeInfo" />
+    <type name="Fasil\Assignment3\Api\StudentInfoRepositoryInterface">
+        <plugin name="AfterGetById" type="Fasil\Assignment3\Plugin\AfterGetById" />
+    </type>
 </config>
