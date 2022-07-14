@@ -59,6 +59,13 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
 
     }
 
+    public function  getStudentData($id)
+    {
+        $gradeModel = $this->studentCollectionFactory->create();
+        $gradeModel->addFieldToFilter('entity_id', ['eq'=>$id]);
+        return $gradeModel->getData();
+    }
+
     /**
      * @param int $limit
      * @return array

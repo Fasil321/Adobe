@@ -7,4 +7,8 @@
     <type name="Fasil\Assignment3\Api\StudentInfoRepositoryInterface">
         <plugin name="AfterGetById" type="Fasil\Assignment3\Plugin\AfterGetById" />
     </type>
+
+    <type name="Fasil\Assignment3\Api\GradeInfoRepositoryInterface">
+        <plugin name="AfterGetGradeData" type="Fasil\Assignment3\Plugin\AfterGetGradeData" />
+    </type>
 </config>

@@ -3,4 +3,8 @@
         <extension_attributes for="Fasil\Assignment3\Api\Data\StudentInfoInterface">
             <attribute code="grade" type="Fasil\Assignment3\Api\Data\GradeInfoInterface[]" />
         </extension_attributes>
+
+        <extension_attributes for="Fasil\Assignment3\Api\Data\GradeInfoInterface">
+            <attribute code="student" type="Fasil\Assignment3\Api\Data\StudentInfoInterface[]" />
+        </extension_attributes>
     </config>
