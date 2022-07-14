@@ -11,4 +11,10 @@ interface GradeInfoRepositoryInterface
      * @return GradeInfoInterface[]
      */
     public function getById($id);
+
+    /**
+     * @param int $id
+     * @return GradeInfoInterface
+     */
+    public function getGradeData($id);
 }

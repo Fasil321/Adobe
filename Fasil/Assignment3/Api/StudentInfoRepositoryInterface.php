@@ -26,4 +26,10 @@ interface StudentInfoRepositoryInterface
      */
     public function getStudentWithGrade($id);
 
+    /**
+     * @param int $id
+     * @return StudentInfoInterface[]
+     */
+    public function  getStudentData($id);
+
 }

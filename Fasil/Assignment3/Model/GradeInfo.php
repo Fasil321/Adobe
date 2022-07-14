@@ -4,9 +4,10 @@ namespace Fasil\Assignment3\Model;
 
 use Fasil\Assignment3\Api\Data\GradeInfoInterface;
 use Fasil\Assignment3\Model\ResourceModel\GradeInfo as ResourceModel;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use Magento\Framework\Model\AbstractModel;
 
-class GradeInfo extends AbstractModel implements GradeInfoInterface
+class GradeInfo extends AbstractExtensibleModel implements GradeInfoInterface
 {
     const ID ='id';
 
@@ -64,5 +65,21 @@ class GradeInfo extends AbstractModel implements GradeInfoInterface
     public function setGrade($grade)
     {
         return $this->setData(self::GRADE, $grade);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\GradeInfoExtensionInterface $extensionAttributes)
+    {
+        return $this->_setExtensionAttributes($extensionAttributes);
     }
 }
