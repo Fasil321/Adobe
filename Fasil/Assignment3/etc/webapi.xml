@@ -13,4 +13,18 @@
             <resource ref="self" />
         </resources>
     </route>
+
+    <route url="/V1/getlist/data/" method="GET">
+        <service class="Fasil\Assignment3\Api\StudentInfoRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+
+    <route url="/V1/getlist/gradedata/" method="GET">
+        <service class="Fasil\Assignment3\Api\GradeInfoRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
 </routes>

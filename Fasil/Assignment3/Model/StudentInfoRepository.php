@@ -10,7 +10,7 @@ use Fasil\Assignment3\Api\Data\StudentInfoInterfaceFactory;
 use Fasil\Assignment3\Model\ResourceModel\StudentInfo\CollectionFactory;
 use Magento\Framework\Api\ExtensionAttribute\JoinProcessorInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
-
+use Fasil\Assignment3\Api\Data\StudentInfoSearchResultsInterfaceFactory;
 
 class StudentInfoRepository implements StudentInfoRepositoryInterface
 {
@@ -24,7 +24,9 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
      */
     public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection,
         StudentInfoInterfaceFactory $studentInfo,CollectionFactory $studentCollectionFactory,
-        JoinProcessorInterface $extensionAttributesJoinProcessor, CollectionProcessorInterface $collectionProcessor)
+        JoinProcessorInterface $extensionAttributesJoinProcessor, CollectionProcessorInterface $collectionProcessor,
+        CollectionProcessorInterface $collectionProcessorInterface,
+        StudentInfoSearchResultsInterfaceFactory $searchResultsFactory)
     {
         $this->studentInfoFactory = $studentInfoFactory;
         $this->resourceConnection = $resourceConnection;
@@ -32,6 +34,8 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         $this->studentCollectionFactory = $studentCollectionFactory;
         $this->extensionAttributesJoinProcessor = $extensionAttributesJoinProcessor;
         $this->collectionProcessor = $collectionProcessor;
+        $this->searchResultsFactory = $searchResultsFactory;
+        $this->collectionProcessorInterface = $collectionProcessorInterface;
     }
 
     /**
@@ -92,6 +96,18 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         $gradeTable = 'student_grade';
         $join = $connection->select()->from(['mainTable'=>$mainTable])->join(['gradeTable'=>$gradeTable],'mainTable.entity_id=gradeTable.student_id')->where('mainTable.entity_id=?',$id);
         return $connection->fetchAll($join);
+    }
+
+    public function getList(SearchCriteriaInterface $searchCriteria)
+    {
+        $studentData = $this->studentCollectionFactory->create();
+        $this->collectionProcessorInterface->process($searchCriteria, ($studentData));
+        $searchData = $this->searchResultsFactory->create();
+        $searchData->setSearchCriteria($searchCriteria);
+        $searchData->setItems($studentData->getItems());
+        $searchData->setTotalCount($studentData->getSize());
+        $searchData->setSearchCriteria($searchCriteria);
+        return $searchData;
     }
 
 }

@@ -1,0 +1,10 @@
+<?php
+    $data = $this->getListData();
+    foreach ($data as $details) {
+?>
+    <p> Id <span><?=$details->getId() ?></span></p>
+    <p> Name <span><?=$details->getName() ?></span></p>
+    <p> Email <span><?=$details->getEmail() ?></span></p>
+    <p> Active/Inactive <span><?=$details->getEnabled() ?></span></p>
+        <a  href="<?= $block->getUrl('getlist/index/edit').'id/'.$details->getId(); ?>"><button value="<?=$details->getId() ?>">Edit</button></a>
+<?php } ?>
