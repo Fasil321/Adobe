@@ -12,6 +12,40 @@ use Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterfaceFactory;
 
 class GradeInfoRepository implements GradeInfoRepositoryInterface{
 
+    /**
+     * @var CollectionFactory
+     */
+    private CollectionFactory $collectionFactory;
+
+    /**
+     * @var GradeInfoInterfaceFactory
+     */
+    private GradeInfoInterfaceFactory $gradeInfoInterfaceFactory;
+
+    /**
+     * @var \Fasil\Assignment3\Model\GradeInfoFactory
+     */
+    private \Fasil\Assignment3\Model\GradeInfoFactory $gradeInfoFactory;
+
+    /**
+     * @var CollectionProcessorInterface
+     */
+    private CollectionProcessorInterface $collectionProcessorInterface;
+
+    /**
+     * @var GradeInfoSearchResultsInterfaceFactory
+     */
+    private GradeInfoSearchResultsInterfaceFactory $searchResultsFactory;
+
+    /**
+     * Constructor
+     *
+     * @param CollectionFactory $collectionFactory
+     * @param GradeInfoInterfaceFactory $gradeInfoInterfaceFactory
+     * @param \Fasil\Assignment3\Model\GradeInfoFactory $gradeInfoFactory
+     * @param CollectionProcessorInterface $collectionProcessorInterface
+     * @param GradeInfoSearchResultsInterfaceFactory $searchResultsFactory
+     */
     public function __construct(CollectionFactory $collectionFactory,
         GradeInfoInterfaceFactory $gradeInfoInterfaceFactory,
         GradeInfoFactory $gradeInfoFactory,
@@ -34,6 +68,9 @@ class GradeInfoRepository implements GradeInfoRepositoryInterface{
         return $gradeModel->getData();
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getGradeData($id)
     {
         $gradeModel = $this->gradeInfoFactory->create()->load($id);
@@ -44,6 +81,9 @@ class GradeInfoRepository implements GradeInfoRepositoryInterface{
         return $gradeData;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $gradeData = $this->collectionFactory->create();

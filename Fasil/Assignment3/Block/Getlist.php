@@ -17,17 +17,34 @@ class Getlist extends Template
      */
     private StudentInfoRepositoryInterface $studentInfoRepository;
 
-    public function __construct(Template\Context $context, SearchCriteriaBuilder $searchCriteriaBuilder, StudentInfoRepositoryInterface $studentInfoRepository, array $data = [])
-    {
+    /**
+     * Constructor
+     *
+     * @param Template\Context $context
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
+     * @param StudentInfoRepositoryInterface $studentInfoRepository
+     * @param array $data
+     */
+    public function __construct(
+        Template\Context $context,
+        SearchCriteriaBuilder $searchCriteriaBuilder,
+        StudentInfoRepositoryInterface $studentInfoRepository,
+        array $data = []
+    ) {
         parent::__construct($context, $data);
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         $this->studentInfoRepository = $studentInfoRepository;
     }
 
+    /**
+     * Get all data using search criteria
+     *
+     * @return \Fasil\Assignment3\Api\Data\StudentInfoInterface[]
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     public function getListData()
     {
         $search = $this->searchCriteriaBuilder->create();
-        $data = $this->studentInfoRepository->getList($search)->getItems();
-        return $data;
+        return $this->studentInfoRepository->getList($search)->getItems();
     }
 }

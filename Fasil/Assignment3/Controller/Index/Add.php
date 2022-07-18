@@ -7,7 +7,7 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\PageFactory;
 
-class Getlist extends Action
+class Add extends Action
 {
 
     /**
@@ -18,7 +18,6 @@ class Getlist extends Action
 
     /**
      * Constructor.
-     *
      * @param Context $context
      * @param PageFactory $pageFactory
      */

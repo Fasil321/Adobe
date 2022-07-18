@@ -11,6 +11,7 @@ use Fasil\Assignment3\Model\ResourceModel\StudentInfo\CollectionFactory;
 use Magento\Framework\Api\ExtensionAttribute\JoinProcessorInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Fasil\Assignment3\Api\Data\StudentInfoSearchResultsInterfaceFactory;
+use Fasil\Assignment3\Model\ResourceModel\StudentInfo as ResourceModel;
 
 class StudentInfoRepository implements StudentInfoRepositoryInterface
 {
@@ -20,14 +21,69 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
     private \Fasil\Assignment3\Model\StudentInfoFactory $studentInfoFactory;
 
     /**
-     * @param \Fasil\Assignment3\Model\StudentInfoFactory $studentInfoFactory
+     * @var ResourceConnection
      */
-    public function __construct(StudentInfoFactory $studentInfoFactory, ResourceConnection $resourceConnection,
-        StudentInfoInterfaceFactory $studentInfo,CollectionFactory $studentCollectionFactory,
-        JoinProcessorInterface $extensionAttributesJoinProcessor, CollectionProcessorInterface $collectionProcessor,
+    private ResourceConnection $resourceConnection;
+
+    /**
+     * @var StudentInfoInterfaceFactory
+     */
+    private StudentInfoInterfaceFactory $studentInfo;
+
+    /**
+     * @var JoinProcessorInterface
+     */
+    private JoinProcessorInterface $extensionAttributesJoinProcessor;
+
+    /**
+     * @var CollectionFactory
+     */
+    private CollectionFactory $studentCollectionFactory;
+
+    /**
+     * @var CollectionProcessorInterface
+     */
+    private CollectionProcessorInterface $collectionProcessor;
+
+    /**
+     * @var CollectionProcessorInterface
+     */
+    private CollectionProcessorInterface $collectionProcessorInterface;
+
+    /**
+     * @var StudentInfoSearchResultsInterfaceFactory
+     */
+    private StudentInfoSearchResultsInterfaceFactory $searchResultsFactory;
+
+    /**
+     * @var ResourceModel
+     */
+    private ResourceModel $resourceModel;
+
+    /**
+     * Constructor
+     *
+     * @param \Fasil\Assignment3\Model\StudentInfoFactory $studentInfoFactory
+     * @param ResourceConnection $resourceConnection
+     * @param StudentInfoInterfaceFactory $studentInfo
+     * @param CollectionFactory $studentCollectionFactory
+     * @param JoinProcessorInterface $extensionAttributesJoinProcessor
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param CollectionProcessorInterface $collectionProcessorInterface
+     * @param StudentInfoSearchResultsInterfaceFactory $searchResultsFactory
+     * @param ResourceModel $resourceModel
+     */
+    public function __construct(
+        StudentInfoFactory $studentInfoFactory,
+        ResourceConnection $resourceConnection,
+        StudentInfoInterfaceFactory $studentInfo,
+        CollectionFactory $studentCollectionFactory,
+        JoinProcessorInterface $extensionAttributesJoinProcessor,
+        CollectionProcessorInterface $collectionProcessor,
         CollectionProcessorInterface $collectionProcessorInterface,
-        StudentInfoSearchResultsInterfaceFactory $searchResultsFactory)
-    {
+        StudentInfoSearchResultsInterfaceFactory $searchResultsFactory,
+        ResourceModel $resourceModel
+    ) {
         $this->studentInfoFactory = $studentInfoFactory;
         $this->resourceConnection = $resourceConnection;
         $this->studentInfo = $studentInfo;
@@ -36,6 +92,7 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         $this->collectionProcessor = $collectionProcessor;
         $this->searchResultsFactory = $searchResultsFactory;
         $this->collectionProcessorInterface = $collectionProcessorInterface;
+        $this->resourceModel = $resourceModel;
     }
 
     /**
@@ -46,23 +103,14 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
      */
     public function getById($id)
     {
-        // $student = $this->studentInfoFactory->create();
-        // return $student->load($id, 'entity_id')->getEmail();
-
-
-        $studentModel = $this->studentInfoFactory->create()->load($id);
-        $studentData = $this->studentInfo->create();
-        $studentData->setId($studentModel->getId());
-        $studentData->setName($studentModel->getName());
-        $studentData->setEmail($studentModel->getEmail());
-        $studentData->setRegistrationNo($studentModel->getRegistrationNo());
-        $studentData->setDob($studentModel->getDob());
-        $studentData->setAddress($studentModel->getAddress());
-        $studentData->setEnabled($studentModel->getEnabled());
-        return $studentData;
-
+         $student = $this->studentInfoFactory->create();
+         return $student->load($id, 'entity_id');
     }
 
+
+    /**
+     * @inheritDoc
+     */
     public function  getStudentData($id)
     {
         $gradeModel = $this->studentCollectionFactory->create();
@@ -98,6 +146,9 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         return $connection->fetchAll($join);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $studentData = $this->studentCollectionFactory->create();
@@ -110,4 +161,20 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
         return $searchData;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function save($data)
+    {
+        return $this->resourceModel->save($data);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function delete($id)
+    {
+        $student = $this->studentInfoFactory->create()->load($id);
+        return $this->resourceModel->delete($student);
+    }
 }

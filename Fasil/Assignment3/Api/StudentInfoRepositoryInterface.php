@@ -43,4 +43,15 @@ interface StudentInfoRepositoryInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
 
+    /**
+     * @param int $id
+     * @return \Fasil\Assignment3\Api\Data\StudentInfoInterface
+     */
+    public function save($id);
+
+    /**
+     * @param int $id
+     * @return bool true on success
+     */
+    public function delete($id);
 }

@@ -10,19 +10,7 @@ class AfterGetGradeData
     {
         $this->studentInfoRepository = $studentInfoRepository;
     }
-    public function afterGetGradeData(\Fasil\Assignment3\Api\GradeInfoRepositoryInterface $subject, \Fasil\Assignment3\Api\Data\GradeInfoInterface $resultGrade)
-    {
-        try {
-            $data = $this->studentInfoRepository->getStudentData($resultGrade->getStudentId());
-        } catch (NoSuchEntityException $e){
-            return $resultGrade;
-        }
-        $extensionAttribute = $resultGrade->getExtensionAttributes();
-        $extensionAttributeData = $extensionAttribute ? $extensionAttribute : $this->StudentInfoExtensionFactory->create();
-        $extensionAttributeData->setStudent($data);
-        $resultGrade->setExtensionAttributes($extensionAttributeData);
-        return $resultGrade;
-    }
+
     public function afterGetList(\Fasil\Assignment3\Api\GradeInfoRepositoryInterface $subject, \Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterface $resultGradeInfo)
     {
         $student=[];
