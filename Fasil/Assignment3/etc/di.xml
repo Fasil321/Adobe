@@ -4,6 +4,9 @@
     <preference for="Fasil\Assignment3\Api\GradeInfoRepositoryInterface" type="Fasil\Assignment3\Model\GradeInfoRepository" />
     <preference for="Fasil\Assignment3\Api\Data\StudentInfoInterface" type="Fasil\Assignment3\Model\StudentInfo" />
     <preference for="Fasil\Assignment3\Api\Data\GradeInfoInterface" type="Fasil\Assignment3\Model\GradeInfo" />
+    <preference for="Fasil\Assignment3\Api\Data\StudentInfoSearchResultsInterface" type="Fasil\Assignment3\Model\StudentInfoSearchResults" />
+    <preference for="Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterface" type="Fasil\Assignment3\Model\GradeInfoSearchResults" />
+
     <type name="Fasil\Assignment3\Api\StudentInfoRepositoryInterface">
         <plugin name="AfterGetById" type="Fasil\Assignment3\Plugin\AfterGetById" />
     </type>
