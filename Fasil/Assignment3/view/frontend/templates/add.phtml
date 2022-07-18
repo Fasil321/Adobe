@@ -1,0 +1,12 @@
+<form action="<?= $this->getUrl('getlist/index/save')?>" method="post">
+    <p>Name</p><input type="text" name="name" class="name">
+    <p>Registration No</p><input type="text" name="registration_no" class="registration">
+    <p>Email</p><input type="text" name="email" class="email">
+    <p>Dob</p><input type="date" name="dob" class="dob">
+    <p>Address</p><textarea name="address" class="address"></textarea>
+    <select name="enabled" id="cars">
+        <option value="0">Disabled</option>
+        <option value="1">Enabled</option>
+    </select>
+    <button type="submit">Save</button>
+</form>

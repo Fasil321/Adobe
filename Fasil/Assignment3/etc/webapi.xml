@@ -1,19 +1,6 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
-    <route url="/V1/student/data/:id" method="GET">
-        <service class="Fasil\Assignment3\Api\StudentInfoRepositoryInterface" method="getById"/>
-        <resources>
-            <resource ref="self" />
-        </resources>
-    </route>
-    <route url="/V1/grade/data/:id" method="GET">
-        <service class="Fasil\Assignment3\Api\GradeInfoRepositoryInterface" method="getGradeData"/>
-        <resources>
-            <resource ref="self" />
-        </resources>
-    </route>
-
     <route url="/V1/getlist/data/" method="GET">
         <service class="Fasil\Assignment3\Api\StudentInfoRepositoryInterface" method="getList"/>
         <resources>

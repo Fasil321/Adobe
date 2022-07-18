@@ -25,11 +25,17 @@ class GradeInfo extends AbstractExtensibleModel implements GradeInfoInterface
         $this->_init(ResourceModel::class);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getId()
     {
         return $this->getData(self::ID);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function setId($id)
     {
         return $this->setData(self::ID,$id);

@@ -13,26 +13,13 @@ class AfterGetById
         $this->studentInfoFactory = $studentInfoFactory;
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
     }
-    public function afterGetById(\Fasil\Assignment3\Api\StudentInfoRepositoryInterface $subject, \Fasil\Assignment3\Api\Data\StudentInfoInterface $resultStudentInfo)
-    {
-        try {
-            $data = $this->gradeInfoRepository->getById($resultStudentInfo->getId());
-        } catch (NoSuchEntityException $e){
-            return $resultStudentInfo;
-        }
-        $extensionAttribute = $resultStudentInfo->getExtensionAttributes();
-        $extensionAttributeData = $extensionAttribute ? $extensionAttribute : $this->GradeInfoExtensionFactory->create();
-        $extensionAttributeData->setGrade($data);
-        $resultStudentInfo->setExtensionAttributes($extensionAttributeData);
-        return $resultStudentInfo;
-    }
 
     public function afterGetList(\Fasil\Assignment3\Api\StudentInfoRepositoryInterface $subject, \Fasil\Assignment3\Api\Data\StudentInfoSearchResultsInterface $resultStudentInfo)
     {
         $grade=[];
         foreach ($resultStudentInfo->getItems() as $items) {
             try {
-                $searchCriteria=$this->searchCriteriaBuilder->addFilter('id', $items->getId())->create();
+                $searchCriteria=$this->searchCriteriaBuilder->addFilter('student_id', $items->getId())->create();
                 $data = $this->gradeInfoRepository->getList($searchCriteria)->getItems();
             } catch (NoSuchEntityException $e) {
                 return $resultStudentInfo;

@@ -1,10 +1,36 @@
+<a href="<?= $block->escapeUrl($block->getUrl('getlist/index/add')); ?>"><button>Create</button></a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Registration No</th>
+        <th>Email</th>
+        <th>Dob</th>
+        <th>Address</th>
+        <th>Enabled/Disabled</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
 <?php
-    $data = $this->getListData();
-    foreach ($data as $details) {
-?>
-    <p> Id <span><?=$details->getId() ?></span></p>
-    <p> Name <span><?=$details->getName() ?></span></p>
-    <p> Email <span><?=$details->getEmail() ?></span></p>
-    <p> Active/Inactive <span><?=$details->getEnabled() ?></span></p>
-        <a  href="<?= $block->getUrl('getlist/index/edit').'id/'.$details->getId(); ?>"><button value="<?=$details->getId() ?>">Edit</button></a>
+    $data = $block->getListData();
+foreach ($data as $details) {
+    ?>
+        <tr>
+            <td><?=$details->getId() ?></td>
+            <td><?=$details->getName() ?></td>
+            <td><?=$details->getRegistrationNo() ?></td>
+            <td><?=$details->getEmail() ?></td>
+            <td><?=$details->getDob() ?></td>
+            <td><?=$details->getAddress() ?></td>
+            <td><?=$details->getEnabled() ?></td>
+            <td>
+                <a  href="<?= $this->getUrl('getlist/index/edit').'id/'.$details->getId(); ?>">Edit</a>
+                <a  href="<?= $this->getUrl('getlist/index/delete').'id/'.$details->getId(); ?>">Delete</a>
+            </td>
+        </tr>
 <?php } ?>
+    </tbody>
+</table>
