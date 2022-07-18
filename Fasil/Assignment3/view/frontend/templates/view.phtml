@@ -1,4 +1,4 @@
-<a href="<?= $this->getUrl('getlist/index/add'); ?>"><button>Create</button></a>
+<a href="<?= $block->escapeUrl($block->getUrl('getlist/index/add')); ?>"><button>Create</button></a>
 
 <table border="1">
     <thead>
@@ -15,9 +15,9 @@
     </thead>
     <tbody>
 <?php
-    $data = $this->getListData();
-    foreach ($data as $details) {
-?>
+    $data = $block->getListData();
+foreach ($data as $details) {
+    ?>
         <tr>
             <td><?=$details->getId() ?></td>
             <td><?=$details->getName() ?></td>

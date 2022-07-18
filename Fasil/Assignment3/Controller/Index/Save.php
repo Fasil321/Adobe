@@ -9,6 +9,7 @@ use Fasil\Assignment3\Api\StudentInfoRepositoryInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Controller\ResultInterface;
+use Fasil\Assignment3\Api\Data\StudentInfoInterfaceFactory;
 
 class Save extends Action
 {
@@ -27,11 +28,13 @@ class Save extends Action
     public function __construct(
         Context $context,
         StudentInfoRepositoryInterface $studentInfoRepository,
-        RedirectFactory $resultRedirectFactory
+        RedirectFactory $resultRedirectFactory,
+        StudentInfoInterfaceFactory $studentInfoInterfaceFactory
     ) {
         parent::__construct($context);
         $this->studentInfoRepository = $studentInfoRepository;
         $this->resultRedirectFactory = $resultRedirectFactory;
+        $this->studentInfoInterfaceFactory = $studentInfoInterfaceFactory;
     }
 
 
@@ -55,18 +58,17 @@ class Save extends Action
             $student->setAddress($data['address']);
             $student->setEnabled($data['enabled']);
             $this->studentInfoRepository->save($student);
-            $this->messageManager->addSuccess(__('Saved successfully'));
-        }
-        else
-        {
-            $student = $this->studentInfoRepository;
+            $this->messageManager->addSuccess(__('Student data updated successfully'));
+        } else {
+            $student = $this->studentInfoInterfaceFactory->create();
             $student->setRegistrationNo($data['registration_no']);
             $student->setName($data['name']);
             $student->setEmail($data['email']);
             $student->setDob($data['dob']);
             $student->setAddress($data['address']);
             $student->setEnabled($data['enabled']);
-            $this->studentInfoRepository->save($data);
+            $this->studentInfoRepository->save($student);
+            $this->messageManager->addSuccess(__('Student created successfully'));
         }
         return $resultRedirect->setPath('getlist/index/getlist');
     }

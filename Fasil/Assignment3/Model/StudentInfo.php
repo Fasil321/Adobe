@@ -2,10 +2,8 @@
 namespace Fasil\Assignment3\Model;
 
 use Magento\Framework\Model\AbstractExtensibleModel;
-use Magento\Framework\Model\AbstractModel;
 use Fasil\Assignment3\Api\Data\StudentInfoInterface;
 use Fasil\Assignment3\Model\ResourceModel\StudentInfo as ResourceModel;
-use Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface;
 
 class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterface
 {
