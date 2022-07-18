@@ -19,7 +19,7 @@ class AfterGetById
         $grade=[];
         foreach ($resultStudentInfo->getItems() as $items) {
             try {
-                $searchCriteria=$this->searchCriteriaBuilder->addFilter('id', $items->getId())->create();
+                $searchCriteria=$this->searchCriteriaBuilder->addFilter('student_id', $items->getId())->create();
                 $data = $this->gradeInfoRepository->getList($searchCriteria)->getItems();
             } catch (NoSuchEntityException $e) {
                 return $resultStudentInfo;
