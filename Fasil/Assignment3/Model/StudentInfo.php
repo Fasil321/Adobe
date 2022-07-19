@@ -7,13 +7,13 @@ use Fasil\Assignment3\Model\ResourceModel\StudentInfo as ResourceModel;
 
 class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterface
 {
-    const ID = 'entity_id';
-    const REGISTERNO = 'registration_no';
-    const NAME = 'name';
-    const EMAIL = 'email';
-    const DOB = 'dob';
-    const ADDRESS = 'address';
-    const ENABLED ='enabled';
+    public const ID = 'entity_id';
+    public const REGISTERNO = 'registration_no';
+    public const NAME = 'name';
+    public const EMAIL = 'email';
+    public const DOB = 'dob';
+    public const ADDRESS = 'address';
+    public const ENABLED ='enabled';
 
     /**
      * Model construct that should be used for object initialization
@@ -38,7 +38,7 @@ class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterfac
      */
     public function setId($id)
     {
-        return $this->setData(self::ID,$id);
+        return $this->setData(self::ID, $id);
     }
 
     /**
@@ -148,8 +148,9 @@ class StudentInfo extends AbstractExtensibleModel implements StudentInfoInterfac
     /**
      * @inheritdoc
      */
-    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface $extensionAttributes)
-    {
+    public function setExtensionAttributes(
+        \Fasil\Assignment3\Api\Data\StudentInfoExtensionInterface $extensionAttributes
+    ) {
         return $this->_setExtensionAttributes($extensionAttributes);
     }
 }

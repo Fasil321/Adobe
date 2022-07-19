@@ -22,7 +22,6 @@ class Delete extends Action
      */
     private StudentInfoRepositoryInterface $studentInfoRepository;
 
-
     /**
      * Constructor.
      *
@@ -40,7 +39,6 @@ class Delete extends Action
         $this->resultRedirectFactory = $resultRedirectFactory;
     }
 
-
     /**
      * Execute action based on request and return result
      *
@@ -51,7 +49,7 @@ class Delete extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
         $id = $this->getRequest()->getParam('id');
         $this->studentInfoRepository->delete($id);
-        $this->messageManager->addSuccess(__('Student '.$id.' deleted successfully'));
+        $this->messageManager->addSuccess(__('Student deleted successfully'));
         return $resultRedirect->setPath('getlist/index/getlist');
     }
 }

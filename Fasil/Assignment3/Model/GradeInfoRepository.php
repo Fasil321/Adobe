@@ -10,8 +10,8 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterfaceFactory;
 
-class GradeInfoRepository implements GradeInfoRepositoryInterface{
-
+class GradeInfoRepository implements GradeInfoRepositoryInterface
+{
     /**
      * @var CollectionFactory
      */
@@ -46,12 +46,13 @@ class GradeInfoRepository implements GradeInfoRepositoryInterface{
      * @param CollectionProcessorInterface $collectionProcessorInterface
      * @param GradeInfoSearchResultsInterfaceFactory $searchResultsFactory
      */
-    public function __construct(CollectionFactory $collectionFactory,
+    public function __construct(
+        CollectionFactory $collectionFactory,
         GradeInfoInterfaceFactory $gradeInfoInterfaceFactory,
         GradeInfoFactory $gradeInfoFactory,
         CollectionProcessorInterface $collectionProcessorInterface,
-        GradeInfoSearchResultsInterfaceFactory $searchResultsFactory)
-    {
+        GradeInfoSearchResultsInterfaceFactory $searchResultsFactory
+    ) {
         $this->collectionFactory = $collectionFactory;
         $this->gradeInfoInterfaceFactory = $gradeInfoInterfaceFactory;
         $this->gradeInfoFactory = $gradeInfoFactory;

@@ -1,16 +1,24 @@
 <?php
-    $student= $this->getEditData();
+    $student= $block->getEditData();
 ?>
-<form action="<?= $this->getUrl('getlist/index/save').'id/'.$student->getId() ?>" method="post">
-    <p>Name</p><input type="text" name="name" value="<?= $student->getName() ?>" class="name">
-    <p>Registration No</p><input type="text" name="registration_no"
-                                 value="<?= $student->getRegistrationNo() ?>" class="registration">
-    <p>Email</p><input type="text" name="email" value="<?= $student->getEmail() ?>" class="email">
-    <p>Dob</p><input type="date" name="dob" value="<?= $student->getDob() ?>" class="dob">
-    <p>Address</p><textarea type="text" name="address" class="address"><?= $student->getAddress() ?></textarea>
-    <p>Enabled/Disabled</p><select name="enabled" id="cars">
-        <option value="0" <?php if($student->getEnabled()=='0'):?> selected="selected"<?php endif; ?>>Disabled</option>
-        <option value="1"  <?php if($student->getEnabled()=='1'):?> selected="selected" <?php endif; ?>>Enabled</option>
+<form action="<?=  $block->escapeUrl($block->getUrl('getlist/index/save').'id/'.$student->getId()); ?>" method="post">
+    <p>Name</p>
+    <input type="text" name="name" value="<?= /* @noEscape */  $student->getName() ?>" class="name">
+    <p>Registration No</p>
+    <input type="text" name="registration_no"
+           value="<?= /* @noEscape */  $student->getRegistrationNo() ?>" class="registration">
+    <p>Email</p>
+    <input type="email" name="email" value="<?= /* @noEscape */  $student->getEmail() ?>" class="email">
+    <p>Dob</p>
+    <input type="date" name="dob" value="<?= /* @noEscape */  $student->getDob() ?>" class="dob">
+    <p>Address</p>
+    <textarea type="text" name="address" class="address"><?= /* @noEscape */  $student->getAddress() ?></textarea>
+    <p>Enabled/Disabled</p>
+    <select name="enabled" id="enabled">
+        <option value="0" <?php if ( /* @noEscape */  $student->getEnabled()=='0'):?>
+            selected="selected"<?php endif; ?>>Disabled</option>
+        <option value="1"  <?php if ( /* @noEscape */  $student->getEnabled()=='1'):?>
+            selected="selected" <?php endif; ?>>Enabled</option>
     </select>
     <button type="submit">Update</button>
 </form>

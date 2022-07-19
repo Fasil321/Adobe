@@ -9,12 +9,10 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Edit extends Action
 {
-
     /**
      * @var PageFactory
      */
     private $pageFactory;
-
 
     /**
      * Index constructor.
@@ -28,7 +26,6 @@ class Edit extends Action
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
     }
-
 
     /**
      * Execute action based on request and return result
