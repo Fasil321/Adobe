@@ -3,7 +3,7 @@
 <table border="1">
     <thead>
     <tr>
-        <th>No</th>
+        <th>Id</th>
         <th>Name</th>
         <th>Registration No</th>
         <th>Email</th>
@@ -19,16 +19,20 @@
 foreach ($data as $details) {
     ?>
         <tr>
-            <td><?=$details->getId() ?></td>
-            <td><?=$details->getName() ?></td>
-            <td><?=$details->getRegistrationNo() ?></td>
-            <td><?=$details->getEmail() ?></td>
-            <td><?=$details->getDob() ?></td>
-            <td><?=$details->getAddress() ?></td>
-            <td><?=$details->getEnabled() ?></td>
+            <td><?= /* @noEscape */  $details->getId() ?></td>
+            <td><?= /* @noEscape */  $details->getName() ?></td>
+            <td><?= /* @noEscape */  $details->getRegistrationNo() ?></td>
+            <td><?= /* @noEscape */  $details->getEmail() ?></td>
+            <td><?= /* @noEscape */  $details->getDob() ?></td>
+            <td><?= /* @noEscape */  $details->getAddress() ?></td>
+            <td><?= /* @noEscape */  $details->getEnabled() ?></td>
             <td>
-                <a  href="<?= $this->getUrl('getlist/index/edit').'id/'.$details->getId(); ?>">Edit</a>
-                <a  href="<?= $this->getUrl('getlist/index/delete').'id/'.$details->getId(); ?>">Delete</a>
+                <a href="<?= $block->escapeUrl($block->getUrl('getlist/index/edit').'id/'.$details->getId()); ?>">
+                    Edit
+                </a>
+                <a href="<?= $block->escapeUrl($block->getUrl('getlist/index/delete').'id/'.$details->getId()); ?>">
+                    Delete
+                </a>
             </td>
         </tr>
 <?php } ?>

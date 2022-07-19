@@ -34,25 +34,24 @@ class Join extends Action
         jsonFactory $jsonFactory,
         StudentInfoRepositoryInterface $studentInfoRepository
     ) {
-		parent::__construct($context);
-		$this->jsonFactory = $jsonFactory;
-		$this->studentInfoRepository = $studentInfoRepository;
-	}
+        parent::__construct($context);
+        $this->jsonFactory = $jsonFactory;
+        $this->studentInfoRepository = $studentInfoRepository;
+    }
 
     /**
      * Execute
      *
      * @return ResponseInterface|Json|ResultInterface
      */
-	public function execute()
-	{
-		$result = $this->jsonFactory->create();
-		$id = $this->getRequest()->getParam('id');
-
-		$data = $this->studentInfoRepository->getStudentWithGrade($id);
-		if($data){
-			return $result->setData($data);
-		}
-		return $result->setData('No data with id '.$id);
-	}
+    public function execute()
+    {
+        $result = $this->jsonFactory->create();
+        $id = $this->getRequest()->getParam('id');
+        $data = $this->studentInfoRepository->getStudentWithGrade($id);
+        if ($data) {
+            return $result->setData($data);
+        }
+        return $result->setData('No data with id '.$id);
+    }
 }

@@ -7,33 +7,45 @@ use Magento\Framework\Api\ExtensibleDataInterface;
 interface GradeInfoInterface extends ExtensibleDataInterface
 {
     /**
+     * Get grade id
+     *
      * @return int
      */
     public function getId();
 
     /**
+     * Set grade id
+     *
      * @param int $id
      * @return void
      */
     public function setId($id);
 
     /**
+     * Get student id
+     *
      * @return int
      */
     public function getStudentId();
 
     /**
+     * Set student id
+     *
      * @param int $studentId
      * @return void
      */
     public function setStudentId($studentId);
 
     /**
+     * Get grade
+     *
      * @return string
      */
     public function getGrade();
 
     /**
+     * Set grade
+     *
      * @param string $grade
      * @return void
      */
@@ -52,5 +64,7 @@ interface GradeInfoInterface extends ExtensibleDataInterface
      * @param \Fasil\Assignment3\Api\Data\GradeInfoExtensionInterface|null $extensionAttributes
      * @return $this
      */
-    public function setExtensionAttributes(\Fasil\Assignment3\Api\Data\GradeInfoExtensionInterface $extensionAttributes);
+    public function setExtensionAttributes(
+        \Fasil\Assignment3\Api\Data\GradeInfoExtensionInterface $extensionAttributes
+    );
 }

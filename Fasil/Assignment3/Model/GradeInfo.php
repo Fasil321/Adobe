@@ -9,11 +9,11 @@ use Magento\Framework\Model\AbstractModel;
 
 class GradeInfo extends AbstractExtensibleModel implements GradeInfoInterface
 {
-    const ID ='id';
+    public const ID ='id';
 
-    const STUDENT_ID = 'student_id';
+    public const STUDENT_ID = 'student_id';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
     /**
      * Initialize magento model.
@@ -38,7 +38,7 @@ class GradeInfo extends AbstractExtensibleModel implements GradeInfoInterface
      */
     public function setId($id)
     {
-        return $this->setData(self::ID,$id);
+        return $this->setData(self::ID, $id);
     }
 
     /**

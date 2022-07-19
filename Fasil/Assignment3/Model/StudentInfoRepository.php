@@ -107,11 +107,10 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
          return $student->load($id, 'entity_id');
     }
 
-
     /**
      * @inheritDoc
      */
-    public function  getStudentData($id)
+    public function getStudentData($id)
     {
         $gradeModel = $this->studentCollectionFactory->create();
         $gradeModel->addFieldToFilter('entity_id', ['eq'=>$id]);
@@ -119,30 +118,30 @@ class StudentInfoRepository implements StudentInfoRepositoryInterface
     }
 
     /**
-     * @param int $limit
-     * @return array
+     * @inheritDoc
      */
     public function getDetails($limit)
     {
-    	$collection = [];
-        for($i=1;$i<=$limit;$i++){
-        	$student = $this->studentInfoFactory->create();
-        	$data = $student->load($i);
-	        $collection[] = $data->getData();
+        $collection = [];
+        for ($i=1; $i<=$limit; $i++) {
+            $student = $this->studentInfoFactory->create();
+            $data = $student->load($i);
+            $collection[] = $data->getData();
         }
         return $collection;
     }
 
     /**
-     * @param int $id
-     * @return array
+     * @inheritDoc
      */
     public function getStudentWithGrade($id)
     {
         $connection = $this->resourceConnection->getConnection();
         $mainTable = 'student_info';
         $gradeTable = 'student_grade';
-        $join = $connection->select()->from(['mainTable'=>$mainTable])->join(['gradeTable'=>$gradeTable],'mainTable.entity_id=gradeTable.student_id')->where('mainTable.entity_id=?',$id);
+        $join = $connection->select()->from(['mainTable'=>$mainTable])
+            ->join(['gradeTable'=>$gradeTable], 'mainTable.entity_id=gradeTable.student_id')
+            ->where('mainTable.entity_id=?', $id);
         return $connection->fetchAll($join);
     }
 

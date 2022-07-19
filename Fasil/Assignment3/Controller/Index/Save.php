@@ -19,11 +19,17 @@ class Save extends Action
     private StudentInfoRepositoryInterface $studentInfoRepository;
 
     /**
+     * @var StudentInfoInterfaceFactory
+     */
+    private StudentInfoInterfaceFactory $studentInfoInterfaceFactory;
+
+    /**
      * Constructor
      *
      * @param Context $context
      * @param StudentInfoRepositoryInterface $studentInfoRepository
      * @param RedirectFactory $resultRedirectFactory
+     * @param StudentInfoInterfaceFactory $studentInfoInterfaceFactory
      */
     public function __construct(
         Context $context,
@@ -37,7 +43,6 @@ class Save extends Action
         $this->studentInfoInterfaceFactory = $studentInfoInterfaceFactory;
     }
 
-
     /**
      * Execute method
      *
@@ -48,8 +53,7 @@ class Save extends Action
         $id = $this->getRequest()->getParam('id');
         $data = $this->getRequest()->getParams();
         $resultRedirect = $this->resultRedirectFactory->create();
-        if ($id)
-        {
+        if ($id) {
             $student = $this->studentInfoRepository->getById($id);
             $student->setRegistrationNo($data['registration_no']);
             $student->setName($data['name']);

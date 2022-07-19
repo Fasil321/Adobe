@@ -10,18 +10,23 @@ use Magento\Framework\Exception\LocalizedException;
 interface GradeInfoRepositoryInterface
 {
     /**
+     * Retrive grade data using id
+     *
      * @param int $id
      * @return GradeInfoInterface[]
      */
     public function getById($id);
 
     /**
+     * Retrive grade data
+     *
      * @param int $id
      * @return GradeInfoInterface
      */
     public function getGradeData($id);
 
     /**
+     * Retrieve grade of student which match a specified criteria.
      *
      * @param SearchCriteriaInterface $searchCriteria
      * @return GradeInfoSearchResultsInterface

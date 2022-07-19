@@ -15,7 +15,6 @@ class Getlist extends Action
      */
     private $pageFactory;
 
-
     /**
      * Constructor.
      *
@@ -25,12 +24,10 @@ class Getlist extends Action
     public function __construct(
         Context $context,
         PageFactory $pageFactory
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
     }
-
 
     /**
      * Execute action based on request and return result

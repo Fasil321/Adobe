@@ -9,12 +9,10 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Add extends Action
 {
-
     /**
      * @var PageFactory
      */
     private $pageFactory;
-
 
     /**
      * Constructor.
@@ -24,12 +22,10 @@ class Add extends Action
     public function __construct(
         Context $context,
         PageFactory $pageFactory
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
     }
-
 
     /**
      * Execute action based on request and return result

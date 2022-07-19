@@ -2,17 +2,38 @@
 
 namespace Fasil\Assignment3\Plugin;
 
+use Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterface;
+use Fasil\Assignment3\Api\GradeInfoRepositoryInterface;
 use Fasil\Assignment3\Model\StudentInfoRepository;
 
 class AfterGetGradeData
 {
+    /**
+     * @var StudentInfoRepository
+     */
+    private StudentInfoRepository $studentInfoRepository;
+
+    /**
+     * Constructor
+     *
+     * @param StudentInfoRepository $studentInfoRepository
+     */
     public function __construct(StudentInfoRepository $studentInfoRepository)
     {
         $this->studentInfoRepository = $studentInfoRepository;
     }
 
-    public function afterGetList(\Fasil\Assignment3\Api\GradeInfoRepositoryInterface $subject, \Fasil\Assignment3\Api\Data\GradeInfoSearchResultsInterface $resultGradeInfo)
-    {
+    /**
+     * After plugin for getlist method
+     *
+     * @param GradeInfoRepositoryInterface $subject
+     * @param GradeInfoSearchResultsInterface $resultGradeInfo
+     * @return GradeInfoSearchResultsInterface
+     */
+    public function afterGetList(
+        GradeInfoRepositoryInterface $subject,
+        GradeInfoSearchResultsInterface $resultGradeInfo
+    ) {
         $student=[];
         foreach ($resultGradeInfo->getItems() as $items) {
             try {
@@ -21,7 +42,8 @@ class AfterGetGradeData
                 return $resultGradeInfo;
             }
             $extensionAttribute = $items->getExtensionAttributes();
-            $extensionAttributeData = $extensionAttribute ? $extensionAttribute : $this->StudentInfoExtensionFactory->create();
+            $extensionAttributeData = $extensionAttribute ? $extensionAttribute :
+                $this->StudentInfoExtensionFactory->create();
             $extensionAttributeData->setStudent($data);
             $items->setExtensionAttributes($extensionAttributeData);
             $student[] = $items;
