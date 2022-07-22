@@ -1,0 +1,16 @@
+<div class="customer-name-container" data-bind="scope: 'customersection'">
+    <p data-bind="text: customername().name"></p>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customersection": {
+                        "component" : "Fasil_Assignment4/js/customer-name"
+                    }
+                }
+            }
+        }
+    }
+</script>
