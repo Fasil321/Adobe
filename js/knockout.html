@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js">
+        </script>
+        <script
+                src="https://code.jquery.com/jquery-3.0.0.min.js"
+                integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+                crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="ko-init.js"></script>
+    </head>
+<body>
+<!-- File: page.html -->
+<div id="main">
+    <p>Input 1</p> <br>
+    <input type="text" data-bind="value:theValue1"/>
+    <p>Input 2</p> <br>
+    <input type="text" data-bind="value:theValue2"/>
+
+    <div>
+        <br/><br/>
+        <button id="button">Do It</button>
+    </div>
+    <p>Result</p>
+    <input data-bind="value:theValue">
+</div>
+</body>
+</html>
