@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div>
+            <p>Input 1 </p><input type="text" class="input1"> <br>
+            <p>Input 2 </p><input type="text" class="input2"> <br><br>
+            <button id="submit"> Result</button> <br>
+            <p>Result </p><input type="text" class="result"> <br>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $("button").click(function ()
+        {
+            var in1 = $(".input1").val();
+            var in2 = $(".input2").val();
+            if(in1=='' && in2=='')
+            {
+                alert('Please fill the value fields');
+            }else if(in1==''){
+                alert('Please fill the value 1 fields');
+            }else if(in2==''){
+                alert('Please fill the value 2 fields');
+            }
+            else {
+                $('.result').val(parseInt(in1) + parseInt(in2));
+            }
+        });
+    });
+</script>
+</html>
