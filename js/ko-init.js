@@ -3,11 +3,12 @@ jQuery(function(){
     {
         this.theValue1 = ko.observable("");
         this.theValue2 = ko.observable("");
-        this.theValue =  ko.computed(function () {
-            return Number(this.theValue1()) + Number(this.theValue2())
-        }, this);
+        this.theValue =  ko.observable("");
+        this.addValue =  function () {
+            this.theValue(Number(this.theValue1()) + Number(this.theValue2()))
+        };
     }
 
-    window.viewModel = new viewModelConstructor;
-    ko.applyBindings(window.viewModel);
+    var viewModel = new viewModelConstructor;
+    ko.applyBindings(viewModel);
 });
