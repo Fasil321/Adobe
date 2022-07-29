@@ -13,7 +13,6 @@
         <script type="text/javascript" src="ko-init.js"></script>
     </head>
 <body>
-<!-- File: page.html -->
 <div id="main">
     <p>Input 1</p> <br>
     <input type="text" data-bind="value:theValue1"/>
@@ -22,7 +21,7 @@
 
     <div>
         <br/><br/>
-        <button id="button">Do It</button>
+        <button id="button" data-bind="click:addValue">Do It</button>
     </div>
     <p>Result</p>
     <input data-bind="value:theValue">
