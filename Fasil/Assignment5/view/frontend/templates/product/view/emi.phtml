@@ -1,0 +1,56 @@
+<?php
+    $viewmodel = $block->getViewModel();
+    $id = $block->getRequest()->getParam('id');
+?>
+<p data-block="dropdown" class="minicart-wrapper">Emi starts at ****. <a href="#" class="emi-available-options action" data-trigger="trigger">Emi options</a></p>
+
+<div class="block block-minicart"
+     data-mage-init='{
+        "dropdownDialog": {
+            "appendTo": "[data-block=dropdown]",
+            "triggerTarget":"[data-trigger=trigger]",
+            "timeout": 2000,
+            "closeOnMouseLeave": false,
+            "closeOnEscape": true,
+            "autoOpen": true,
+            "triggerClass": "active",
+            "parentClass": "active",
+            "buttons": []
+        }
+     }'>
+    <div id="minicart-content-wrapper">
+        <div class="emi-option-inside-container">
+            <p>EMI Options</p>
+        </div>
+        <div class="emi-option-inner">
+            <table data-bind="scope:'emi-table'">
+                <tr>
+                    <th>Standard Plan</th>
+                </tr>
+                <tr>
+                    <th>Emi Plan</th>
+                    <th>Interest(pa)</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tbody id="md-knockout-example"  data-bind="foreach: emiData">
+                    <tr data-bind="html: $data">
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "emi-table": {
+                        "component": "Fasil_Assignment5/js/emitable",
+                        "price" : "<?php /* @escapeNotVerified */ echo $viewmodel->getProductPrice($id); ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>

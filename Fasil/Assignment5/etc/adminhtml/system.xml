@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="emi" translate="label" sortOrder="10">
+            <label>Emi</label>
+        </tab>
+        <section id="emi_option" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Emi option</label>
+            <tab>emi</tab>
+            <resource>Fasil_Assignment5::config</resource>
+            <group id="dynamic_emi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Emi options</label>
+                <field id="emi_options" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add emi plans</label>
+                    <frontend_model>Fasil\Assignment5\Block\Adminhtml\Form\Field\Plans</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
